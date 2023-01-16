@@ -367,7 +367,7 @@ class Frontend extends \Contao\Frontend
                             // Pass root language to page object
                             $objPage->language = $objRoot->language;
 
-                            $arrPages[] = $objProduct->generateUrl($objPage, true);
+                            $arrPages[] = str_replace('&', '&amp;', $objProduct->generateUrl($objPage, true));
 
                             // Only take the first category because this is our primary one
                             // Having multiple reader pages in the sitemap XML would mean duplicate content
